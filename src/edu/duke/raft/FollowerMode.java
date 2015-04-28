@@ -5,6 +5,7 @@ import java.util.Timer;
 public class FollowerMode extends RaftMode {
 	private Timer myLeaderTimeoutTimer;
 	private int LEADER_TIMEOUT_TIMER_ID = 1;
+	private int lastElectionTerm = 0;
 	public void go () {
 		synchronized (mLock) {
 			System.out.println ("S" + 
@@ -38,13 +39,18 @@ public class FollowerMode extends RaftMode {
 			int lastLogIndex,
 			int lastLogTerm) {
 		synchronized (mLock) {
+			int term = mConfig.getCurrentTerm();
+			if(this.lastElectionTerm<candidateTerm){ //check if this is a new election, if so, reset my votedFor
+				mConfig.setCurrentTerm(term, 0);
+				this.lastElectionTerm=candidateTerm;
+			}
 			myLeaderTimeoutTimer.cancel(); //Not sure if we should cancel the timer here
 			//Vote for candidate if it has at least as up to date term
 			//Vote for candidate if it has at least as up to date entries (TODO)
-			int term = mConfig.getCurrentTerm();
-			if(candidateTerm>=term){ //Candidate has an up  to date term and I have not voted yet. // && mConfig.getVotedFor()==0
+			
+			if(candidateTerm>=term && mConfig.getVotedFor()==0){ //Candidate has an up  to date term and I have not voted yet. // 
 				//Additional checks to be added for log status
-				mConfig.setCurrentTerm(candidateTerm,candidateID);
+				mConfig.setCurrentTerm(term, candidateID); //set who we voted for, but do not increment term yet.
 				return 0; //Vote for the candidate
 			}
 			return term;
@@ -71,13 +77,12 @@ public class FollowerMode extends RaftMode {
 			System.out.println(mID + " HEARTBEAT");
 			this.resetLeaderTimeoutTimer();
 			int term = mConfig.getCurrentTerm();
-			int result = term;
 			if(leaderTerm>=term){
-				//mConfig.setCurrentTerm(leaderTerm, 0);
+				mConfig.setCurrentTerm(leaderTerm, 0);
 				mLastApplied=mLog.append(entries);
-				result=0;
+				return 0;
 			}
-			return result;
+			return term;
 		}
 	}  
 

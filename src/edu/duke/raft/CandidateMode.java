@@ -72,10 +72,11 @@ public class CandidateMode extends RaftMode {
 			int leaderCommit) {
 		synchronized (mLock) {
 			int term = mConfig.getCurrentTerm ();
-			if(leaderTerm>term){
+			if(leaderTerm>=term){
 				this.myElectionTimeoutTimer.cancel();
 				//mConfig.setCurrentTerm(leaderTerm, 0);
 				mLastApplied=mLog.append(entries);
+				mConfig.setCurrentTerm(leaderTerm,0);
 				RaftServerImpl.setMode(new FollowerMode());
 				return 0;
 			}
