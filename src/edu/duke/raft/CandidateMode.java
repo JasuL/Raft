@@ -7,7 +7,7 @@ public class CandidateMode extends RaftMode {
 	private Timer myElectionTimeoutTimer;
 	private int ELECTION_TIMEOUT_TIMER_ID = 2;
 	private int COUNT_VOTES_INTERVAL = 25;
-	private int ELECTION_TIME_LENGTH = 100;
+	private int ELECTION_TIME_LENGTH = 300;
 	public void go () {
 		synchronized (mLock) {
 			this.incrementTerm();    
@@ -16,19 +16,21 @@ public class CandidateMode extends RaftMode {
 					"." + 
 					mConfig.getCurrentTerm() + 
 					": switched to candidate mode.");
+			this.beginElection();
 		}
-		this.beginElection();
+		
 
 	}
 	private void incrementTerm(){
 		mConfig.setCurrentTerm(mConfig.getCurrentTerm()+1,0);
 	}
 	private void beginElection(){
-		//Set a timer for checking for responses.
-		//Set a timer for ending election.
+		System.out.println("Candidate "+mID+" starting election.");
+		RaftResponses.setTerm(mConfig.getCurrentTerm());
+		//RaftResponses.clearVotes(mConfig.getCurrentTerm()); //not sure if we should be clearing votes here
 		myCountVotesTimer = scheduleTimer(this.COUNT_VOTES_INTERVAL,this.COUNT_VOTES_TIMER_ID); 
 		myElectionTimeoutTimer = scheduleTimer(this.ELECTION_TIME_LENGTH,this.ELECTION_TIMEOUT_TIMER_ID);
-		for(int i=1;i<=mConfig.NUM_SERVERS;i++){
+		for(int i=1;i<=mConfig.getNumServers();i++){
 			this.remoteRequestVote(i, mConfig.getCurrentTerm(), mID, mLastApplied, mConfig.getCurrentTerm()-1); //is this right??
 		}
 	}
@@ -70,8 +72,14 @@ public class CandidateMode extends RaftMode {
 			int leaderCommit) {
 		synchronized (mLock) {
 			int term = mConfig.getCurrentTerm ();
-			int result = term;
-			return result;
+			if(leaderTerm>term){
+				this.myElectionTimeoutTimer.cancel();
+				//mConfig.setCurrentTerm(leaderTerm, 0);
+				mLastApplied=mLog.append(entries);
+				RaftServerImpl.setMode(new FollowerMode());
+				return 0;
+			}
+			return term;
 		}
 	}
 
@@ -83,6 +91,7 @@ public class CandidateMode extends RaftMode {
 			if(timerID==this.ELECTION_TIMEOUT_TIMER_ID){
 				this.myCountVotesTimer.cancel();
 				this.myElectionTimeoutTimer.cancel();
+				System.out.println("Election for candidate " + this.mID + " cancelled.");
 				this.incrementTerm();
 				this.beginElection();
 			}
@@ -95,6 +104,7 @@ public class CandidateMode extends RaftMode {
 						voteCounter++;
 					}
 				}
+				System.out.println("Counted " + voteCounter + " votes for candidate "+ this.mID);
 				if(voteCounter>votes.length/2){
 					this.myCountVotesTimer.cancel();
 					this.myElectionTimeoutTimer.cancel();
