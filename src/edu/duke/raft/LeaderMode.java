@@ -3,17 +3,20 @@ package edu.duke.raft;
 import java.util.Timer;
 public class LeaderMode extends RaftMode {
 	private Timer myHeartbeatTimer;
-	private int HEARTBEAT_TIMER_ID = 1;
+	private int HEARTBEAT_TIMER_ID = 3;
 	//TODO Another timer for checking if recent thing committed.
   public void go () {
+	
     synchronized (mLock) {
+    
       System.out.println ("S" + 
 			  mID + 
 			  "." + 
 			  mConfig.getCurrentTerm() + 
 			  ": switched to leader mode.");
+      
       this.sendHeartbeats();
-      Timer myHeartbeatTimer = scheduleTimer(this.HEARTBEAT_INTERVAL, this.HEARTBEAT_TIMER_ID);
+  	Timer myHeartbeatTimer = scheduleTimer(this.HEARTBEAT_INTERVAL, this.HEARTBEAT_TIMER_ID);
       
     }
   }
@@ -22,7 +25,10 @@ public class LeaderMode extends RaftMode {
 		Entry heartbeatEntry = null;
 		Entry[] entries = {heartbeatEntry};
 		for(int i=1;i<=mConfig.getNumServers();i++){
-			System.out.println(mID + "SENDING HEARTBEAT");
+			if(i==mID){
+				continue;
+			}
+			System.out.println(mID + " SENDING HEARTBEAT");
 			remoteAppendEntries(mID, term, mID, mLog.getLastIndex(), mLog.getLastTerm(),entries ,mCommitIndex);
 		}
 

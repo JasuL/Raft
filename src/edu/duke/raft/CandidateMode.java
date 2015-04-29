@@ -1,13 +1,10 @@
 package edu.duke.raft;
 
 import java.util.Timer;
+import java.util.Random;
 public class CandidateMode extends RaftMode {
-	private Timer myCountVotesTimer;
-	private int COUNT_VOTES_TIMER_ID = 1;
 	private Timer myElectionTimeoutTimer;
 	private int ELECTION_TIMEOUT_TIMER_ID = 2;
-	private int COUNT_VOTES_INTERVAL = 25;
-	private int ELECTION_TIME_LENGTH = 300;
 	public void go () {
 		synchronized (mLock) {
 			this.incrementTerm();    
@@ -27,11 +24,11 @@ public class CandidateMode extends RaftMode {
 	private void beginElection(){
 		System.out.println("Candidate "+mID+" starting election.");
 		RaftResponses.setTerm(mConfig.getCurrentTerm());
-		//RaftResponses.clearVotes(mConfig.getCurrentTerm()); //not sure if we should be clearing votes here
-		myCountVotesTimer = scheduleTimer(this.COUNT_VOTES_INTERVAL,this.COUNT_VOTES_TIMER_ID); 
-		myElectionTimeoutTimer = scheduleTimer(this.ELECTION_TIME_LENGTH,this.ELECTION_TIMEOUT_TIMER_ID);
+		RaftResponses.clearVotes(mConfig.getCurrentTerm());
+		Random rand = new Random();
+		myElectionTimeoutTimer = scheduleTimer(rand.nextInt(this.ELECTION_TIMEOUT_MAX - this.ELECTION_TIMEOUT_MIN) + this.ELECTION_TIMEOUT_MIN, this.ELECTION_TIMEOUT_TIMER_ID);
 		for(int i=1;i<=mConfig.getNumServers();i++){
-			this.remoteRequestVote(i, mConfig.getCurrentTerm(), mID, mLastApplied, mConfig.getCurrentTerm()-1); //is this right??
+			this.remoteRequestVote(i, mConfig.getCurrentTerm(), this.mID, mLastApplied, mLog.getLastTerm()); 
 		}
 	}
 
@@ -46,12 +43,14 @@ public class CandidateMode extends RaftMode {
 			int lastLogIndex,
 			int lastLogTerm) {
 		synchronized (mLock) {
-			
-			System.out.println("Vote requested from candidate server " + mID);	
-//			int term = mConfig.getCurrentTerm ();
-//			int result = term;
-//			return result;
-			return 0;
+			int term = mConfig.getCurrentTerm();
+			System.out.println("Vote requested from serverID: " + mID);	
+			if(candidateID==mID){
+				return 0;
+			}
+			else{
+				return term;
+			}
 		}
 	}
 
@@ -70,18 +69,17 @@ public class CandidateMode extends RaftMode {
 			int prevLogTerm,
 			Entry[] entries,
 			int leaderCommit) {
-		synchronized (mLock) {
-			int term = mConfig.getCurrentTerm ();
+		//synchronized (mLock) {
+			int term = mConfig.getCurrentTerm();
 			if(leaderTerm>=term){
 				this.myElectionTimeoutTimer.cancel();
-				//mConfig.setCurrentTerm(leaderTerm, 0);
 				mLastApplied=mLog.append(entries);
 				mConfig.setCurrentTerm(leaderTerm,0);
 				RaftServerImpl.setMode(new FollowerMode());
 				return 0;
 			}
 			return term;
-		}
+		//}
 	}
 
 	// @param id of the timer that timed out
@@ -90,14 +88,7 @@ public class CandidateMode extends RaftMode {
 	public void handleTimeout (int timerID) {
 		synchronized (mLock) {
 			if(timerID==this.ELECTION_TIMEOUT_TIMER_ID){
-				this.myCountVotesTimer.cancel();
 				this.myElectionTimeoutTimer.cancel();
-				System.out.println("Election for candidate " + this.mID + " cancelled.");
-				this.incrementTerm();
-				this.beginElection();
-			}
-			if(timerID==this.COUNT_VOTES_TIMER_ID){
-				//count the votes
 				int[] votes = RaftResponses.getVotes(mConfig.getCurrentTerm());
 				int voteCounter=0;
 				for(int i=0;i<votes.length;i++){
@@ -107,9 +98,12 @@ public class CandidateMode extends RaftMode {
 				}
 				System.out.println("Counted " + voteCounter + " votes for candidate "+ this.mID);
 				if(voteCounter>votes.length/2){
-					this.myCountVotesTimer.cancel();
-					this.myElectionTimeoutTimer.cancel();
 					RaftServerImpl.setMode(new LeaderMode());
+				}
+				else{
+					System.out.println("Election for candidate " + this.mID + " cancelled.");
+					this.incrementTerm();
+					this.beginElection();
 				}
 			}
 		}
