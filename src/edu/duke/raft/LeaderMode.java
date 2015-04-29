@@ -1,6 +1,8 @@
 package edu.duke.raft;
 
 import java.util.Timer;
+import java.util.Arrays;
+import java.util.ArrayList;
 public class LeaderMode extends RaftMode {
 	private Timer myHeartbeatTimer;
 	private int HEARTBEAT_TIMER_ID = 3;
@@ -21,17 +23,40 @@ public class LeaderMode extends RaftMode {
     }
   }
   private void sendHeartbeats(){
-		int term = mConfig.getCurrentTerm();
-		Entry heartbeatEntry = null;
-		Entry[] entries = {heartbeatEntry};
-		for(int i=1;i<=mConfig.getNumServers();i++){
-			if(i==mID){
-				continue;
-			}
-			System.out.println(mID + " SENDING HEARTBEAT");
-			remoteAppendEntries(i, term, mID, mLog.getLastIndex(), mLog.getLastTerm(),entries ,mCommitIndex);
-		}
+//		int term = mConfig.getCurrentTerm();
+//		Entry heartbeatEntry = null;
+//		Entry[] entries = {heartbeatEntry};
+//		for(int i=1;i<=mConfig.getNumServers();i++){
+//			if(i==mID){
+//				continue;
+//			}
+//			System.out.println(mID + " SENDING HEARTBEAT");
+//			remoteAppendEntries(i, term, mID, mLog.getLastIndex(), mLog.getLastTerm(),entries ,mCommitIndex);
+//		}
+	  repairLog();
 
+	  
+  }
+  private void repairLog(){
+	  RaftResponses.setTerm(mConfig.getCurrentTerm());
+	  int[] latestMatchingIndex = new int[6];
+	  int response = -1;
+	  Arrays.fill(latestMatchingIndex, mLog.getLastIndex());
+	  for(int j=1;j<=mConfig.getNumServers();j++){
+		  while(response!=0){
+			  ArrayList<Entry> entryList = new ArrayList<Entry>();
+			  for(int i=latestMatchingIndex[j];i<mLog.getLastIndex()+1;i++){
+				  entryList.add(mLog.getEntry(i));
+			  }
+			  Entry[] entries = new Entry[entryList.size()];
+			  entries = entryList.toArray(entries);
+			  remoteAppendEntries(j, mConfig.getCurrentTerm(), mID, latestMatchingIndex[j], mLog.getEntry(latestMatchingIndex[j]).term, entries ,mCommitIndex);
+			  latestMatchingIndex[j]--;
+			  int[] responses = RaftResponses.getAppendResponses(mConfig.getCurrentTerm());
+			  response = responses[j]; //might be off by one
+		  }
+		  
+	  }
 	  
   }
 

@@ -39,7 +39,7 @@ public class FollowerMode extends RaftMode {
 			
 			//Vote for candidate if it has at least as up to date term
 			//Vote for candidate if it has at least as up to date entries (TODO)
-			if(candidateTerm>=term && mConfig.getVotedFor()==0){ //Candidate has an up  to date term and I have not voted yet. //  
+			if(candidateTerm>=term && mConfig.getVotedFor()==0 && lastLogIndex>=mLog.getLastIndex()){ //Candidate has an up  to date term and I have not voted yet. //  
 				//Additional checks to be added for log status
 				System.out.println(mID + " voting for "+ candidateID);
 				mConfig.setCurrentTerm(candidateTerm, candidateID);
@@ -64,25 +64,30 @@ public class FollowerMode extends RaftMode {
 	// current term
 	public int appendEntries (int leaderTerm,
 			int leaderID,
-			int prevLogIndex,
-			int prevLogTerm,
+			int prevLogIndex, //being decremented
+			int prevLogTerm, //check this too
 			Entry[] entries,
 			int leaderCommit) {
 		synchronized (mLock) {
 			
-			//Handle HEARTBEATS****
-			
+			//Heartbeat Handling
 			System.out.println(mID + " Received HEARTBEAT from leaderID: "+leaderID);
 			this.resetLeaderTimeoutTimer();
 			int term = mConfig.getCurrentTerm();
 			if(leaderTerm>=term){
 				mConfig.setCurrentTerm(leaderTerm, 0);
-				//mLastApplied=mLog.append(entries);
+			}
+			
+			//Repair Log
+			int termAtIndex = mLog.getEntry(prevLogIndex).term;
+			if(termAtIndex==prevLogTerm){
+				mLog.insert(entries, prevLogIndex, prevLogTerm);
 				return 0;
 			}
-			return term;
+			else{
+				return -1;
+			}
 			
-			//*****************
 		}
 	}  
 
