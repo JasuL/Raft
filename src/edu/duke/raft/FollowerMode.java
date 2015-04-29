@@ -72,12 +72,12 @@ public class FollowerMode extends RaftMode {
 			
 			//Handle HEARTBEATS****
 			
-			System.out.println(mID + "Received HEARTBEAT from leaderID");
+			System.out.println(mID + " Received HEARTBEAT from leaderID: "+leaderID);
 			this.resetLeaderTimeoutTimer();
 			int term = mConfig.getCurrentTerm();
 			if(leaderTerm>=term){
 				mConfig.setCurrentTerm(leaderTerm, 0);
-				mLastApplied=mLog.append(entries);
+				//mLastApplied=mLog.append(entries);
 				return 0;
 			}
 			return term;

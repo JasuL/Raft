@@ -29,7 +29,7 @@ public class LeaderMode extends RaftMode {
 				continue;
 			}
 			System.out.println(mID + " SENDING HEARTBEAT");
-			remoteAppendEntries(mID, term, mID, mLog.getLastIndex(), mLog.getLastTerm(),entries ,mCommitIndex);
+			remoteAppendEntries(i, term, mID, mLog.getLastIndex(), mLog.getLastTerm(),entries ,mCommitIndex);
 		}
 
 	  
@@ -71,6 +71,7 @@ public class LeaderMode extends RaftMode {
     synchronized (mLock) {
       int term = mConfig.getCurrentTerm ();
       if(leaderTerm>term){
+    	  System.out.println(mID + " Received HEARTBEAT from leaderID: "+leaderID);
     	  this.myHeartbeatTimer.cancel();
     	  RaftServerImpl.setMode(new FollowerMode());
     	  return 0;
@@ -83,7 +84,10 @@ public class LeaderMode extends RaftMode {
   public void handleTimeout (int timerID) {
     synchronized (mLock) {
     	if(timerID==this.HEARTBEAT_TIMER_ID){
+    		myHeartbeatTimer.cancel();
+    		myHeartbeatTimer = scheduleTimer(this.HEARTBEAT_INTERVAL, this.HEARTBEAT_TIMER_ID);
     		this.sendHeartbeats();
+
     	}
     }
   }

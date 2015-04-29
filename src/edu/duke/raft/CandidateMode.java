@@ -69,17 +69,18 @@ public class CandidateMode extends RaftMode {
 			int prevLogTerm,
 			Entry[] entries,
 			int leaderCommit) {
-		//synchronized (mLock) {
+		synchronized (mLock) {
 			int term = mConfig.getCurrentTerm();
-			if(leaderTerm>=term){
+			if(leaderTerm>=term){ //******Maybe change this *******
+				System.out.println(mID + " Received HEARTBEAT from leaderID: "+leaderID);
 				this.myElectionTimeoutTimer.cancel();
-				mLastApplied=mLog.append(entries);
+				//mLastApplied=mLog.append(entries);
 				mConfig.setCurrentTerm(leaderTerm,0);
 				RaftServerImpl.setMode(new FollowerMode());
 				return 0;
 			}
 			return term;
-		//}
+		}
 	}
 
 	// @param id of the timer that timed out
@@ -96,8 +97,8 @@ public class CandidateMode extends RaftMode {
 						voteCounter++;
 					}
 				}
-				System.out.println("Counted " + voteCounter + " votes for candidate "+ this.mID);
-				if(voteCounter>votes.length/2){
+				System.out.println("Counted " + voteCounter + " votes for candidate " + this.mID + "out of a total of " + mConfig.getNumServers() + "possible votes");
+				if(voteCounter>mConfig.getNumServers()/2){
 					RaftServerImpl.setMode(new LeaderMode());
 				}
 				else{
