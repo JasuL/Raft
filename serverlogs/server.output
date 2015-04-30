@@ -1,0 +1,2345 @@
+NUM_SERVERS=5
+NUM_TO_FAIL=1
+TIME_TO_FAIL=5
+TIME_TO_RESTART=5
+TIME_TO_SIMULATE=60
+S1.1: Log { (1 1) }
+S2.1: Log { (1 1) }
+S3.1: Log { (1 1) }
+S4.1: Log { (1 1) }
+S5.1: Log { (1 1) }
+S1.1: switched to follower mode.
+S2.1: switched to follower mode.S3.1: switched to follower mode.
+
+S4.1: switched to follower mode.
+S5.1: switched to follower mode.
+3 has detected time out from leader
+2 has detected time out from leader
+1 has detected time out from leader
+S3.2: switched to candidate mode.
+Candidate 3 starting election.
+S2.2: switched to candidate mode.
+Candidate 2 starting election.
+S1.2: switched to candidate mode.
+Candidate 1 starting election.
+Server 4 voting for server 2
+Server 5 voting for server 2
+4 has detected time out from leader
+Server 5 voting for server 1
+S4.3: switched to candidate mode.
+Candidate 4 starting election.
+Server 5 voting for server 4
+5 has detected time out from leader
+S5.4: switched to candidate mode.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 2/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 3/5 votes for candidate 2
+S2.2: switched to leader mode.
+Leader 2 sending HEARTBEAT
+Server 1 received HEARTBEAT from server 2
+S1.2: switched to follower mode.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Server 1 voting for server 3
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Server 1 voting for server 4
+1 has detected time out from leader
+S1.6: switched to candidate mode.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 2/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 2/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1Counted 1/5 votes for candidate 5
+
+Candidate 5 starting election.Candidate 1 starting election.
+
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1Counted 1/5 votes for candidate 5
+
+Candidate 5 starting election.Candidate 1 starting election.
+
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 1
+Candidate 5 starting election.Candidate 1 starting election.
+
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+S2.2: Log { (1 1) }
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+S2.2: switched to follower mode.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Server 2 voting for server 5
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Server 2 voting for server 4
+2 has detected time out from leader
+S2.49: switched to candidate mode.
+Candidate 2 starting election.
+Counted 2/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 2/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 3
+Candidate 5 starting election.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2Counted 1/5 votes for candidate 3
+
+Candidate 3 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3Counted 1/5 votes for candidate 1
+
+Candidate 1 starting election.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Counted 1/5 votes for candidate 5
+Candidate 3 starting election.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5Counted 1/5 votes for candidate 2
+
+Candidate 5 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1Counted 1/5 votes for candidate 2
+
+Candidate 2 starting election.Candidate 1 starting election.
+
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Counted 1/5 votes for candidate 5
+Candidate 1 starting election.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+S3.65: Log { (1 1) }
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+S3.65: switched to follower mode.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Server 3 voting for server 4
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+3 has detected time out from leader
+S3.95: switched to candidate mode.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 2/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 4Counted 1/5 votes for candidate 2
+
+Counted 1/5 votes for candidate 3
+Candidate 4 starting election.
+Candidate 5 starting election.
+Candidate 3 starting election.Candidate 2 starting election.
+
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Counted 1/5 votes for candidate 5
+Candidate 4 starting election.Candidate 5 starting election.
+
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Counted 1/5 votes for candidate 2
+Candidate 3 starting election.Candidate 2 starting election.
+
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Counted 1/5 votes for candidate 3
+Candidate 4 starting election.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2Counted 1/5 votes for candidate 4
+
+Candidate 4 starting election.Candidate 2 starting election.
+
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1Counted 1/5 votes for candidate 4
+
+Candidate 4 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Counted 1/5 votes for candidate 5
+Candidate 4 starting election.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+S3.115: Log { (1 1) }
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+S3.115: switched to follower mode.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Server 3 voting for server 2
+Counted 2/5 votes for candidate 2
+Candidate 2 starting election.3 has detected time out from leader
+
+S3.138: switched to candidate mode.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 2
+Candidate 5 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2Counted 1/5 votes for candidate 4
+
+Candidate 4 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1Counted 1/5 votes for candidate 4
+
+Candidate 4 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5Counted 1/5 votes for candidate 2
+
+Counted 1/5 votes for candidate 1
+Candidate 5 starting election.
+Candidate 1 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Counted 1/5 votes for candidate 3
+Candidate 2 starting election.Candidate 3 starting election.
+
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5Counted 1/5 votes for candidate 2
+
+Candidate 5 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Counted 1/5 votes for candidate 5
+Candidate 4 starting election.Candidate 5 starting election.
+
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+S3.157: Log { (1 1) }
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+S3.157: switched to follower mode.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Server 3 voting for server 4
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Server 3 voting for server 1
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Server 3 voting for server 5
+3 has detected time out from leader
+S3.181: switched to candidate mode.
+Candidate 3 starting election.
+Counted 2/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 2/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 2/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.Candidate 5 starting election.
+
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 1
+Candidate 5 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1Counted 1/5 votes for candidate 2
+
+Candidate 2 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Counted 1/5 votes for candidate 3
+Candidate 4 starting election.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Counted 1/5 votes for candidate 2
+Candidate 4 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3Counted 1/5 votes for candidate 2
+
+Candidate 2 starting election.
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+S1.199: Log { (1 1) }
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+S1.199: switched to follower mode.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Server 1 voting for server 2
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+1 has detected time out from leader
+S1.225: switched to candidate mode.
+Candidate 1 starting election.
+Counted 2/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Counted 1/5 votes for candidate 4
+Candidate 2 starting election.
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Counted 1/5 votes for candidate 2
+Candidate 5 starting election.
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 4
+Candidate 4 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Counted 1/5 votes for candidate 1
+Candidate 2 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Counted 1/5 votes for candidate 1
+Candidate 2 starting election.
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3Counted 1/5 votes for candidate 5
+
+Candidate 3 starting election.Candidate 5 starting election.
+
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 2
+Counted 1/5 votes for candidate 1
+Candidate 2 starting election.Candidate 1 starting election.
+
+Counted 1/5 votes for candidate 5
+Candidate 5 starting election.
+Counted 1/5 votes for candidate 3
+Candidate 3 starting election.
+Counted 1/5 votes for candidate 1
+Candidate 1 starting election.
+Counted 1/5 votes for candidate 2
+Candidate 2 starting election.

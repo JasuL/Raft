@@ -2,9 +2,12 @@ package edu.duke.raft;
 
 import java.util.Random;
 import java.util.Timer;
+
 public class FollowerMode extends RaftMode {
+
 	private Timer myLeaderTimeoutTimer;
 	private int LEADER_TIMEOUT_TIMER_ID = 1;
+
 	public void go () {
 		synchronized (mLock) {
 			System.out.println ("S" + 
@@ -12,10 +15,14 @@ public class FollowerMode extends RaftMode {
 					"." + 
 					mConfig.getCurrentTerm() + 
 					": switched to follower mode.");
+
+			//Create timer to detect missing leader
 			Random rand = new Random();
 			myLeaderTimeoutTimer = scheduleTimer(rand.nextInt(this.ELECTION_TIMEOUT_MAX - this.ELECTION_TIMEOUT_MIN) + this.ELECTION_TIMEOUT_MIN, this.LEADER_TIMEOUT_TIMER_ID); //may need to change timer id here
 		}
 	}
+
+	//Restart timer to detect missing leader
 	private void resetLeaderTimeoutTimer(){
 		myLeaderTimeoutTimer.cancel();
 		Random rand = new Random();
@@ -33,26 +40,23 @@ public class FollowerMode extends RaftMode {
 			int lastLogIndex,
 			int lastLogTerm) {
 		synchronized (mLock) {
-			System.out.println("Candidate " + candidateID + " requests vote from serverID: "+ mID);
+			//System.out.println("Candidate " + candidateID + " requests vote from serverID: "+ mID);
 			int term = mConfig.getCurrentTerm();
-			myLeaderTimeoutTimer.cancel(); //Not sure if we should cancel the timer here
 			
-			//Vote for candidate if it has at least as up to date term
-			//Vote for candidate if it has at least as up to date entries (TODO)
-			if(candidateTerm>=term && mConfig.getVotedFor()==0 && lastLogIndex>=mLog.getLastIndex()){ //Candidate has an up  to date term and I have not voted yet. //  
-				//Additional checks to be added for log status
-				System.out.println(mID + " voting for "+ candidateID);
-				mConfig.setCurrentTerm(candidateTerm, candidateID);
+			//myLeaderTimeoutTimer.cancel(); //Not sure if we should cancel the timer here
+			
+			//Vote for candidate if it has at least as up to date term and up to date log entries
+			if(candidateTerm>=term && mConfig.getVotedFor()==0 && lastLogIndex>=mLog.getLastIndex()){ //Candidate has an up  to date term and this server hasn't voted
+				System.out.println("Server " + mID + " voting for server "+ candidateID);
+				mConfig.setCurrentTerm(candidateTerm, candidateID); //update server to candidate's term and save that we are voting for the specific candidate
 				return 0; //Vote for the candidate
 			}
 			else{
-				mConfig.setCurrentTerm(candidateTerm, 0);
+				mConfig.setCurrentTerm(candidateTerm, 0); //update server to candidate's term and save that we didn't vote
 				return term;
 			}
-			
 		}
 	}
-
 
 	// @param leader’s term
 	// @param current leader
@@ -71,21 +75,21 @@ public class FollowerMode extends RaftMode {
 		synchronized (mLock) {
 			
 			//Heartbeat Handling
-			System.out.println(mID + " Received HEARTBEAT from leaderID: "+leaderID);
+			System.out.println("Server "+ mID + " received HEARTBEAT from server "+leaderID);
 			this.resetLeaderTimeoutTimer();
 			int term = mConfig.getCurrentTerm();
 			if(leaderTerm>=term){
-				mConfig.setCurrentTerm(leaderTerm, 0);
+				mConfig.setCurrentTerm(leaderTerm, 0); //update to leader's term
 			}
 			
 			//Repair Log
 			int termAtIndex = mLog.getEntry(prevLogIndex).term;
-			if(termAtIndex==prevLogTerm){
-				mLog.insert(entries, prevLogIndex, prevLogTerm);
+			if(termAtIndex==prevLogTerm){ //if term and index of server match with term and index of leader
+				mLog.insert(entries, prevLogIndex, prevLogTerm); //replace excess logs with correct logs from leader
 				return 0;
 			}
 			else{
-				return -1;
+				return -1; //match logging failure. retry
 			}
 			
 		}
@@ -96,8 +100,8 @@ public class FollowerMode extends RaftMode {
 		synchronized (mLock) {
 			if(timerID==this.LEADER_TIMEOUT_TIMER_ID){
 				myLeaderTimeoutTimer.cancel();
-				System.out.println(mID + " has detected the leader has TIMED OUT\n");
-				RaftServerImpl.setMode(new CandidateMode());
+				System.out.println(mID + " has detected time out from leader");
+				RaftServerImpl.setMode(new CandidateMode()); //no leader detected so become candidate to be new leader
 			}
 		}
 	}
